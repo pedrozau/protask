@@ -7,24 +7,24 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'login',
+      name: 'Login',
       component: Login,
     },
     {
       path: '/signup',
-      name: 'signup',
+      name: 'Signup',
   
       component: () => import('../views/SignupView.vue')
     },
     {
       path: '/protask',
-      name: 'protask',
+      name: 'Protask',
   
       component: () => import('../views/appView.vue')
     },
     {
       path: '/addtask',
-      name: 'addtask',
+      name: 'Addtask',
   
       component: () => import('../views/AddTask.vue')
     },
@@ -36,24 +36,24 @@ const router = createRouter({
     },
     {
       path: '/bestuser',
-      name: 'bestuser',
+      name: 'Bestuser',
   
       component: () => import('../views/ViewBestUser.vue')
     },
     {
       path: '/reward',
-      name: 'reward',
+      name: 'Reward',
   
       component: () => import('../views/ViewReward.vue')
     },
     {
       path: '/editprofile',
-      name: 'editprofile',
+      name: 'Editprofile',
   
       component: () => import('../views/ViewEditProfile.vue')
     },
     {
-      path: '/:catchAll(.*)',
+      path: '/:catchAll(.*)*',
       redirect: '/'
     }
   ]

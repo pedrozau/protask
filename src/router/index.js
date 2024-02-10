@@ -1,9 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory} from 'vue-router'
  
 import Login from '../views/LoginView.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+
+  history: createWebHashHistory(),
   routes: [
     {
       path: '/',
@@ -51,11 +52,8 @@ const router = createRouter({
       name: 'Editprofile',
   
       component: () => import('../views/ViewEditProfile.vue')
-    },
-    {
-      path: '/:catchAll(.*)*',
-      redirect: '/'
     }
+    
   ]
 })
 

@@ -33,7 +33,7 @@ export const useUserStore = defineStore('user',() => {
         localStorage.setItem('_id',response.data.user.id)
         localStorage.setItem('_name',response.data.user.name)
      
-         window.location = '/protask'
+         window.location = '#/protask'
    }
 
 

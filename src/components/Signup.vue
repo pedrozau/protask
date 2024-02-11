@@ -10,7 +10,7 @@ const name = ref('')
 const email = ref('')
 const password = ref('')
 const confirpassword = ref('')
-let  message = ref('')
+const  message = ref('')
 const  useUser =  useUserStore() 
 
 const jsconfetti = new JSConfetti()
@@ -20,13 +20,11 @@ const handleForm = async () => {
 
    if(password.value !== confirpassword.value) {
     
-      message = 'Password is different!'
+      message.value = 'Passward são diferentes!'
       
    }else {
-     message = ''
-   }
-
-   const data = {
+     message.value = ''
+     const data = {
     name:  name.value,
     email: email.value,
     password: password.value
@@ -40,6 +38,9 @@ const handleForm = async () => {
    jsconfetti.addConfetti()
  
   await  useUser.createAccount(data)
+   }
+
+   
  
 
   
@@ -55,7 +56,7 @@ const handleForm = async () => {
 
     <div class="bg-gray-100 h-screen flex items-center justify-center">
         <div class="bg-white p-8 rounded shadow-md w-96">
-            <p class="text-center">{{ message }}</p>
+            <p class="text-center text-red-500 font-bold">{{ message }}</p>
         <h2 class="text-2xl font-semibold mb-4">Signup</h2>
         
         <form @submit.prevent="handleForm">
@@ -75,7 +76,7 @@ const handleForm = async () => {
             </div>
 
             <div class="mb-4">
-                <label for="confirm-password" class="block text-gray-700 text-sm font-bold mb-2">Confirm Password</label>
+                <label for="confirm-password" class="block text-gray-700 text-sm font-bold mb-2">Confirme Password</label>
                 <input type="password" v-model="confirpassword" id="confirm-password" name="confirm-password" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
             </div>
 

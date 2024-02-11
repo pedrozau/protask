@@ -27,13 +27,37 @@ export const useUserStore = defineStore('user',() => {
    const rewarduser = ref([])
 
    async function  auth(data) {
+
+    try{
+
       const response = await Api.post('/user/auth',data)
 
         localStorage.setItem('_token',response.data.access_token)
         localStorage.setItem('_id',response.data.user.id)
         localStorage.setItem('_name',response.data.user.name)
-     
-         window.location = '#/protask'
+          
+
+        if(response.status == 400) {
+
+            return response.data
+            console.log('no')
+
+
+        }else {
+
+          window.location = '#/protask'
+          console.log('yes')
+        }
+
+       
+
+         
+         return response.data
+
+    }catch(e) {
+      return e
+    }
+      
    }
 
 

@@ -40,7 +40,7 @@ function toggleMobileMenu() {
     </RouterLink>
 
     <!-- Menu de Navegação -->
-    <ul :class="{ 'hidden': !mobileOpen }" class="md:flex md:items-center  space-y-5 mr-24 md:space-x-4">
+    <ul :class="{ 'hidden': !mobileOpen }" class="md:flex md:items-center  space-y-5  ml-24 mr-24 md:space-x-4">
       <li>
         <RouterLink to="/protask">
           <a

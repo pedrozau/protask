@@ -99,7 +99,7 @@ async function obterRecompensa(recompensa) {
         <div id="app" class="flex  ">
             <!-- Botão para abrir o modal -->
             <button @click="showModal = true"
-                class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">Criar
+                class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 ml-8 rounded focus:outline-none focus:shadow-outline mt-4">Criar
                 recompensa</button>
 
             <!-- Modal -->

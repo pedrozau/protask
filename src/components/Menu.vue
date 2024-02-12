@@ -21,7 +21,7 @@ function toggleMobileMenu() {
 
 <template>
   <!-- Navbar -->
-  <nav class="bg-blue-500 p-4 flex justify-between items-center">
+  <nav class="bg-blue-500 p-4 flex justify-between   md:items-center ">
     <!-- Mobile Menu Button -->
     <button @click="toggleMobileMenu" class="text-white md:hidden">
         <span class="fas fa-bars"></span>
@@ -40,7 +40,7 @@ function toggleMobileMenu() {
     </RouterLink>
 
     <!-- Menu de Navegação -->
-    <ul :class="{ 'hidden': !mobileOpen }" class="md:flex items-center space-x-4">
+    <ul :class="{ 'hidden': !mobileOpen }" class="md:flex md:items-center  space-y-5 mr-24 md:space-x-4">
       <li>
         <RouterLink to="/protask">
           <a

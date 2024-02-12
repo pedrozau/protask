@@ -1,13 +1,20 @@
 <script setup>
+import { useUserStore } from "@/store/user";
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
 
 const isOpen = ref(false)
 const mobileOpen = ref(false)
-const logout = () => {
+const online = ref(false)
+const store = useUserStore()
+
+
+const logout = async () => {
   window.location = '/'
   window.localStorage.removeItem('_token')
   window.localStorage.removeItem('_id')
+
+     await store.status(online.value)
 
 }
 

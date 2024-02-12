@@ -13,7 +13,7 @@ const useUser = useUserStore()
 const send_data =  async () => {
   
     loading.value = true
-
+    
     const data = {
           email: user_email.value,
           password: user_password.value

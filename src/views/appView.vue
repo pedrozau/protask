@@ -3,12 +3,14 @@ import Menu from '@/components/Menu.vue'
 import { useTaskStore } from '@/store/task'
 import { onMounted, reactive, watch } from 'vue'
 import JSConfetti from 'js-confetti'
+import { useUserStore } from '@/store/user'
 
 const jsconfetti = new JSConfetti()
-
+const online = ref(true)
 
 
 const usetask = useTaskStore()
+const store = useUserStore()
 
 
 const data = reactive({
@@ -19,6 +21,8 @@ const data = reactive({
 onMounted(async () => {
 
   const gettaks = await usetask.getTask()
+
+  await store.status(online.value)
 
   data.task = gettaks
 

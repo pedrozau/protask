@@ -118,5 +118,14 @@ export const useUserStore = defineStore('user',() => {
 
    }
 
-   return {user,auth,createAccount,getUser,bestuser,bestuserpoints,createReward,getReward,rewarduser,reward}
+   async function status(online) {
+      const data = {
+        online
+      }
+      const response = await Api.put('/user/status/' + _id,data)
+
+      return response.data 
+   }
+
+   return {user,auth,createAccount,getUser,bestuser,bestuserpoints,createReward,getReward,rewarduser,reward,status}
 })

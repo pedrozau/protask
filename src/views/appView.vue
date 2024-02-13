@@ -19,14 +19,14 @@ const data = reactive({
 })
 
 
+store.online()
+
 
 
 onMounted(async () => {
   
-   const onli = await store.online()
+   
   const gettaks = await usetask.getTask()
-
-  console.log(onli)
 
   data.task = gettaks
 

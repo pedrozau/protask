@@ -9,8 +9,11 @@ const Api = axios.create({
 
 
 
-const _id = localStorage.getItem('_id')
-const _token = localStorage.getItem('_token')
+const _id = window.localStorage.getItem('_id')
+const _token = window.localStorage.getItem('_token')
+
+
+console.log(_id)
 
 
 Api.defaults.baseURL = 'https://protaskapi.onrender.com'
@@ -118,14 +121,19 @@ export const useUserStore = defineStore('user',() => {
 
    }
 
-   async function status(online) {
-      const data = {
-        online
-      }
-      const response = await Api.put('/user/status/' + _id,data)
+   async function online() {
+     
+      const response = await Api.put('/user/online/'+ _id)
 
       return response.data 
    }
 
-   return {user,auth,createAccount,getUser,bestuser,bestuserpoints,createReward,getReward,rewarduser,reward,status}
+   async function offline() {
+      
+      const response = await Api.put('/user/offline/'+ _id)
+
+      return response.data 
+   }
+
+   return {user,auth,createAccount,getUser,bestuser,bestuserpoints,createReward,getReward,rewarduser,reward,offline,online}
 })

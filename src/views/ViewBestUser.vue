@@ -49,13 +49,18 @@ onMounted( async ()=>{
        <div v-for="(user, index) in users" :key="index">
     <div :class="{ 'bg-slate-100': user.name === _name, 'bg-white': user.name !== _name }" class="flex items-center border-b py-4 rounded p-5">
         <div class="mr-4 relative">
+           
             <img :src="user.avatarUrl ? user.avatarUrl : 'https://cdn.pixabay.com/photo/2020/10/11/19/51/cat-5646889_960_720.jpg'" alt="Avatar" class="w-10 h-10 rounded-full">
             <span v-if="user.online" class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
             <span v-else class="absolute bottom-0 right-0 w-3 h-3 bg-red-500 border-2 border-white rounded-full"></span>
         </div>
+         
+            
+       
+
         <div>
             <h3 class="text-lg font-semibold">{{ user.name }}</h3>
-            <p class="text-gray-600">{{ user.email }}</p>
+           
         </div>
         <div class="ml-auto">
             <p class="text-lg font-semibold">{{ user.points }}</p>

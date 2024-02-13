@@ -9,6 +9,8 @@ const online = ref(false)
 const store = useUserStore()
 
 
+store.online()
+
 const logout =  async () => {
  
   window.localStorage.removeItem('_token')

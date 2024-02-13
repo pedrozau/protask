@@ -3,14 +3,14 @@ import Menu from '@/components/Menu.vue'
 import { useTaskStore } from '@/store/task'
 import { onMounted, reactive, ref } from 'vue'
 import JSConfetti from 'js-confetti'
-import { useUserStore } from '@/store/user'
+
 
 const jsconfetti = new JSConfetti()
 
 
 
 const usetask = useTaskStore()
-const store = useUserStore()
+
 
 
 const data = reactive({
@@ -19,7 +19,6 @@ const data = reactive({
 })
 
 
-store.online()
 
 
 

@@ -9,14 +9,12 @@ const online = ref(false)
 const store = useUserStore()
 
 
-const logout = async () => {
+const logout =  () => {
  
   window.localStorage.removeItem('_token')
   window.localStorage.removeItem('_id')
 
-   const onli =  await store.offline()
-
-   console.log(onli)
+   store.offline()
 
    window.location = '/'  
 

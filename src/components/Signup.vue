@@ -11,6 +11,7 @@ const email = ref('')
 const password = ref('')
 const confirpassword = ref('')
 const  message = ref('')
+const  sucess = ref('')
 const  useUser =  useUserStore() 
 
 const jsconfetti = new JSConfetti()
@@ -35,9 +36,11 @@ const handleForm = async () => {
     password.value = ""
     confirpassword.value = ""
 
-   jsconfetti.addConfetti()
+   //jsconfetti.addConfetti()
+    sucess.value = `${data.name} foi cadastro com sucesso!`
  
-  await  useUser.createAccount(data)
+  const user = await  useUser.createAccount(data)
+  console.log(user)
    }
 
    
@@ -57,6 +60,7 @@ const handleForm = async () => {
     <div class="bg-gray-100 h-screen flex items-center justify-center">
         <div class="bg-white p-8 rounded shadow-md w-96">
             <p class="text-center text-red-500 font-bold">{{ message }}</p>
+            <p class="text-center text-green-500 font-bold">{{ sucess }}</p>
         <h2 class="text-2xl font-semibold mb-4">Signup</h2>
         
         <form @submit.prevent="handleForm">

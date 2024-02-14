@@ -45,7 +45,7 @@ const logout = ()=> {
             <div v-else class="bg-white rounded-lg shadow-lg p-6">
             <!-- Avatar e Informações -->
             <div class="flex items-center mb-4">
-                <img :src="user.avatarUrl" alt="Avatar" class="w-16 h-16 rounded-full mr-4">
+                <img :src=" `https://protaskapi.onrender.com/user/avatar/${user.avatarUrl}` " alt="Avatar" class="w-16 h-16 rounded-full mr-4">
                 <div>
                     <h2 class="text-xl font-semibold">{{ user.name }}</h2>
                     <p class="text-gray-600">{{ user.email }}</p>

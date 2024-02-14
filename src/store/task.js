@@ -72,6 +72,11 @@ export const useTaskStore = defineStore('task',() => {
 
         return response.data;
      }
+
+     async function taskUpdate() {
+
+
+     }
     
 
     return {tasks,getTask,createTask,taskDone}

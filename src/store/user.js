@@ -77,6 +77,7 @@ export const useUserStore = defineStore('user', () => {
 
 
   async function createAccount(data) {
+    
     const response = await Api.post('/user/account', data)
 
       localStorage.setItem('_token', response.data.access_token)
